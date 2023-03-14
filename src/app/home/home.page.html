@@ -14,7 +14,17 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-content>
+      <cdk-virtual-scroll-viewport itemSize="56" minBufferPx="900" maxBufferPx="1350" class="ion-content-scroll-host">
+        <ion-list>
+          <ion-item *cdkVirtualFor="let item of items">
+            <ion-avatar slot="start">
+              <ion-icon name="accessibility-outline"></ion-icon>
+            </ion-avatar>
+            <ion-label> {{ item }} </ion-label>
+          </ion-item>
+        </ion-list>
+      </cdk-virtual-scroll-viewport>
+    </ion-content>
   </div>
 </ion-content>
